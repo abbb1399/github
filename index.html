@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+  <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <a href="#"><img src="image/github3.png"></a>
+      </div>
+      <input type="text" id="searchBar" placeholder="Search or jump to...">
+
+      <ul class="navbar_menu">
+        <li><a href="#">Pull requests</a></li>
+        <li><a href="#">Issues</a></li>
+        <li><a href="#">MarketPlace</a></li>
+        <li><a href="#">Explore</a></li>
+      </ul>
+      
+      <ul class="navbar_icons">
+        <li><i class="far fa-bell"></i></li>
+        <li><i class="fas fa-plus"></i></li>
+        <li><img src="image/avatar.png" alt="Avatar" class="avatar"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="top">
+    <ul class="top_menu">
+      <li><i class="fas fa-book-open"></i> <a href="#">Overview</a></li>
+      <li><i class="fas fa-book"></i> <a href="#">Repositories</a></li>
+      <li><i class="fas fa-tasks"></i> <a href="#">Projects</a></li>
+      <li><i class="fas fa-box-open"></i> <a href="#">Packages</a></li>
+    </ul>
+  </section>
+  
+  <section class="mid">
+    <span class="side">
+      <img src="image/avatar.png" >
+      <div>Paul Jeon</div>
+      <div>abbb1399</div>  
+      <button style="width: 100%">Edit profile</button>
+      <div class="followers">
+        <a href="#"><i class="fas fa-user-friends"></i> <strong>4</strong> followers</a>
+        · 
+        <a href="#"><strong>5</strong> following</a>
+        · 
+        <a href="#"><i class="far fa-star"></i> <strong>1</strong></a>
+      </div>
+    </span>
+
+    <span class="main">
+      <section class="first-section">
+        <div class="first-caption" >
+          <p class="caption" >Popluar repositories</p>
+        </div>  
+        
+        <div class="first-content"> 
+          <div>
+            <div><a href="#"><strong>socket.io</strong></a></div>
+            <div class="description">소켓연습</div>
+          </div>
+          <div>
+            <div><a href="#"><strong>youtube</strong></a></div>
+            <div class="description">유튜브 만들기</div>
+          </div>
+          <div>
+            <div><a href="#"><strong>responsive-navbar1</strong></a></div>
+            <div class="description">반응형 navbar1</div>
+          </div>
+          <div>
+            <div><a href="#"><strong>Vanilla_JS</strong></a></div>
+            <div class="description">바닐라 자바스크립트 연습</div>
+          </div>
+        </div>
+      </section>
+    
+      <section class="second-section">
+        <div class="second-caption">
+          <p class="caption" >230 contributions in the last year</p>
+        </div>  
+        <div class="second-content">
+          <div id="cal-heatmap"></div>
+          <!-- <a href="#">Learn how we count contribution</a> -->
+        </div>  
+      </section>
+
+      <section class="third-section">
+        <span class="third-caption">
+          Contribution activity          
+          <div class="upper-third-content">
+            <span>2020</span><h3></h3>
+          </div>
+          <p>Paul Jeon has no activity yet for this period</p>
+          <button><strong>Show more activity</strong></button>
+        </span>
+        <span class="btns">
+          <button class="active">2020</button>
+          <button>2019</button>
+          <button>2018</button>
+        </span>
+      </section>
+
+
+
+
+
+    </span>
+  </section>
+
+  <footer>
+    <p>© 2020 GitHub, Inc.</p>
+    <ul class="footer_menu">
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Security</a></li>
+      <li><a href="#">Status</a></li>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">Contact GitHub</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">API</a></li>
+      <li><a href="#">Training</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </footer>
+
+
+  <script type="text/javascript">
+    var cal = new CalHeatMap();
+    cal.init({
+		  start: new Date(2020, 0),
+      domain : "year",
+      subDomain : "day",
+      range : 1,
+      scale: [40, 60, 80, 100],
+      cellSize:13,
+      legendHorizontalPosition: "right",
+      legendMargin: [-10, 0, 0, 0],
+      cellPadding: 4,
+      tooltip: true,
+      
+    });
+  </script>
+
+
+
+</body>
+</html>
